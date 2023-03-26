@@ -9,6 +9,3 @@ public class FoodRescue_Application {
 		SpringApplication.run(FoodRescue_Application.class, args);
 	}
 }
-
-
-

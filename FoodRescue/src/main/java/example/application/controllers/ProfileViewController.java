@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * Controller for the main page, displayed after the user has logged in.
  */
 @Controller
-public class MainViewController {
+public class ProfileViewController {
     /**
      * The singleton instance of the database connection. This is used to access the
      * database of users.
@@ -24,12 +24,12 @@ public class MainViewController {
      * @param model The model that defines the attributes to be displayed.
      * @return The name of the view to display.
      */
-    @GetMapping("/main")
+    @GetMapping("/profile")
     public String main(Model model) {
         User user = (User) model.getAttribute("user");
         model.addAttribute("user", user);
         model.addAttribute("users", userDAO.listUsers());
-        return "main-view";
+        return "profile-view";
     }
 
     /**

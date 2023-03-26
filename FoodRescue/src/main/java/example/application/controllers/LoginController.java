@@ -60,7 +60,7 @@ public class LoginController {
             // Add the user to the redirect attributes so that it can be accessed by the
             // main page controller.
             redirectAttrs.addFlashAttribute("user", u);
-            return "redirect:/main";
+            return "redirect:/profile";
         }
 
         // If the user is not found or the password does not match, display an error
