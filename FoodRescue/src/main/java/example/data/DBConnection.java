@@ -1,27 +1,27 @@
 package example.data;
 
 /**
- * Provides a singleton instance of the database connection.
+ * Provides a singleton instance of the MySQL database connection.
  */
 public class DBConnection {
     /**
-     * The singleton instance of the database connection.
+     * The singleton instance of the MySQL database connection.
      */
-    private static StaticDatabaseConnection instance = null;
+    private static MySQLDatabaseConnection instance = null;
 
     /**
      * Constructor intializes the connection.
      */
     private DBConnection() {
-        instance = new StaticDatabaseConnection();
+        instance = new MySQLDatabaseConnection();
     }
 
     /**
-     * Provides global access to the singleton instance of the UrlSet.
+     * Provides global access to the singleton instance of the MySQL database connection.
      *
-     * @return a handle to the singleton instance of the UrlSet.
+     * @return a handle to the singleton instance of the MySQL database connection.
      */
-    public static StaticDatabaseConnection getInstance() {
+    public static MySQLDatabaseConnection getInstance() {
         if (instance == null) {
             new DBConnection();
         }

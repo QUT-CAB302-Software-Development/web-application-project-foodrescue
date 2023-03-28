@@ -1,7 +1,8 @@
 package example.application.controllers;
 
-import example.data.StaticUserDAO;
+import example.data.MySQLUserDAO;
 import example.data.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ public class ProfileViewController {
      * The singleton instance of the database connection. This is used to access the
      * database of users.
      */
-    private final StaticUserDAO userDAO = new StaticUserDAO();
+    private final MySQLUserDAO userDAO = new MySQLUserDAO();
 
     /**
      * Displays the main page.
