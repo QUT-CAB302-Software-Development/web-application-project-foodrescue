@@ -12,4 +12,4 @@ Priorities can be:
  * Must Have
  * Should Have
  * Could Have
- * Nice to Have
+ * Won't Have
