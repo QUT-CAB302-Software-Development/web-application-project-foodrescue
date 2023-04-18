@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BusinessPage {
+
     private String name;
     private List<Review> reviews;
 
@@ -13,10 +14,15 @@ public class BusinessPage {
         this.reviews = new ArrayList<>();
     }
 
+    /** Method 1
+     * Returns: Total number of reviews on a Business account
+     */
     public int getNumberOfReviews() {
         return reviews.size();
     }
-
+    /** Method 2
+     * Returns: Calculates an average of all the ratings on the page
+     */
     public double getAverageRating() {
         if (reviews.size() == 0) {
             return 0;
@@ -28,10 +34,24 @@ public class BusinessPage {
         return (double) sum / reviews.size();
     }
 
-    public List<Review> getReviews() {
-        return reviews;
+    /**
+     * Method 3
+     * Deletes a review if review exists on the page
+     * Returns: void
+     *
+     * @return
+     */
+    public void deleteReview(Review review) throws InvalidReviewException {
+        if(!reviews.contains(review)){
+            throw new InvalidReviewException("Review can't be deleted as it doesn't exist on the page");
+        }
+        reviews.remove(review);
     }
 
+    /** Method 4
+     * Adds a review to a page making sure it has appropriate rating and is not null
+     * Returns: void
+     */
     public void addReview(Review review) throws InvalidReviewException {
         if (review == null) {
             throw new InvalidReviewException("Review cannot be null");
@@ -41,4 +61,13 @@ public class BusinessPage {
         }
         reviews.add(review);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
 }

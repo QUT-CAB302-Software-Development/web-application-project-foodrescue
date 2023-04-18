@@ -3,6 +3,7 @@ package example.application;
 import example.data.BusinessPage;
 import example.data.Exceptions.InvalidReviewException;
 import example.data.Review;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,17 +15,26 @@ import java.util.List;
 class SaksheeTests {
 
 	private BusinessPage businessPage;
+
 	@BeforeEach
 	void createBusiness() {
 		// Create a new business page
 		businessPage = new BusinessPage("Woolworths");
 	}
 
+//	@AfterEach
+//	void tearDown() {
+//		//Remove all the reviews from a page
+//		for(Review review : businessPage.getReviews()){
+//
+//		}
+//	}
+
 	@Test
 	void testGetNumberOfReviews() throws Exception {
-		
+
 		// Add some reviews to the business page
-		businessPage.addReview(new Review("Great product!", "This product is amazing, I would definitely recommend it.", 5));
+		businessPage.addReview(new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 5));
 		businessPage.addReview(new Review("Terrible customer service", "I had a horrible experience with this company.", 1));
 
 		// Get the number of reviews
@@ -36,11 +46,9 @@ class SaksheeTests {
 
 	@Test
 	void testGetAverageRating() throws Exception {
-		// Create a new business page
-		BusinessPage businessPage = new BusinessPage("Woolworths");
 
 		// Add some reviews to the business page
-		businessPage.addReview(new Review("Great product!", "This product is amazing, I would definitely recommend it.", 5));
+		businessPage.addReview(new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 5));
 		businessPage.addReview(new Review("Terrible customer service", "I had a horrible experience with this company.", 1));
 
 		// Get the average rating
@@ -52,11 +60,9 @@ class SaksheeTests {
 
 	@Test
 	void testAddAndRetrieveReview() throws Exception {
-		// Create a new business page
-		BusinessPage businessPage = new BusinessPage("Woolworths");
 
 		// Create a new review
-		Review review = new Review("Great product!", "This product is amazing, I would definitely recommend it.", 5);
+		Review review = new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 5);
 
 		// Add the review to the business page
 		businessPage.addReview(review);
@@ -69,18 +75,31 @@ class SaksheeTests {
 	}
 
 	@Test
-	void testInvalidRating() throws Exception {
-		// Create a new business page
-		BusinessPage businessPage = new BusinessPage("Woolworths");
+	void testDeletingReview() throws InvalidReviewException {
+		// Create two reviews
+		Review good = new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 5);
+		Review bad = new Review("Terrible customer service", "I had a horrible experience with this company.", 1);
 
-		// Create a new review with an invalid rating
-		assertThrows(InvalidReviewException.class, () -> new Review("Great product!", "This product is amazing, I would definitely recommend it.", 0));
+		// Add good review to the page and delete it
+		businessPage.addReview(good);
+		// Assert that the review was deleted successfully
+		businessPage.deleteReview(good);
+		assertTrue(!businessPage.getReviews().contains(good));
+
+		// Attempt to delete a review which does not exist on the page
+		assertThrows(InvalidReviewException.class, () -> businessPage.deleteReview(bad));
+	}
+
+	@Test
+	void testInvalidRating() {
+
+		// Create new reviews with an invalid rating
+		assertThrows(InvalidReviewException.class, () -> new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 0));
+		assertThrows(InvalidReviewException.class, () -> new Review("Great food!", "The food was fresh and was a big portion, I would definitely recommend it.", 6));
 	}
 
 	@Test
 	void testNullReview() {
-		// Create a new business page
-		BusinessPage businessPage = new BusinessPage("Woolworths");
 
 		// Attempt to add a null review to the business page
 		assertThrows(InvalidReviewException.class, () -> businessPage.addReview(null));

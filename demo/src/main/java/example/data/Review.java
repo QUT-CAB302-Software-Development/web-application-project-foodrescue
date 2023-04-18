@@ -3,25 +3,25 @@ package example.data;
 import example.data.Exceptions.InvalidReviewException;
 
 public class Review {
-    //    public Review(String s, String s1, int i) {
-//    }
-//
-//    public int getRating() {
-//    }
-//}
     private String title;
-    private String text;
+    private String description;
     private int rating;
 
-    public Review(String title, String text, int rating) throws InvalidReviewException {
-        if (title == null || text == null) {
-            throw new InvalidReviewException("Title and text cannot be null");
+    /**
+     * Method 5
+     * Review constructor that creates a review only when ratings are valid and the review description
+     * in not null
+     */
+    public Review(String title, String description, int rating) throws InvalidReviewException {
+        if (title == null || description
+                == null) {
+            throw new InvalidReviewException("Title and description cannot be null");
         }
         if (rating < 1 || rating > 5) {
             throw new InvalidReviewException("Invalid rating");
         }
         this.title = title;
-        this.text = text;
+        this.description = description;
         this.rating = rating;
     }
 
@@ -29,8 +29,8 @@ public class Review {
         return title;
     }
 
-    public String getText() {
-        return text;
+    public String getDescription() {
+        return description;
     }
 
     public int getRating() {
