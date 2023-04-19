@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ListingsTests {
     Listings listings = new Listings();
@@ -48,5 +48,6 @@ public class ListingsTests {
     @Test
     void testDietaryFilter(){
         List<FoodListing> matchingListings = listings.dietaryFilter(listings.allListings, "Gluten Free");
+        System.out.println(matchingListings.size());
     }
 }
