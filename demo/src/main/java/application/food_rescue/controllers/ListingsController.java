@@ -1,6 +1,6 @@
-package application.demo.controllers;
+package application.food_rescue.controllers;
 
-import application.demo.models.FoodListing;
+import application.food_rescue.models.FoodListing;
 
 import java.sql.Time;
 import java.util.ArrayList;
