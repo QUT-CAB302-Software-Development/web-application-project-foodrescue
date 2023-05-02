@@ -1,6 +1,6 @@
 package application.demo;
 import application.demo.models.FoodListing;
-import application.demo.models.Listings;
+import application.demo.controllers.ListingsController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +12,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ListingsTests {
-    Listings listings = new Listings();
+public class ListingsControllerTests {
+    ListingsController listingsController = new ListingsController();
 
     FoodListing firstListing = new FoodListing("My Listing", "Yummy food", 3, new ArrayList<String>(
             Arrays.asList("Gluten Free", "Vegan")), LocalDateTime.of(2015,
@@ -22,12 +22,12 @@ public class ListingsTests {
     @BeforeEach
     @Test
     void testAddListing(){
-        listings.addListing(firstListing);
+        listingsController.addListing(firstListing);
     }
 
     @Test
     void testViewListings(){
-        System.out.println(listings.getAllListings());
+        System.out.println(listingsController.getAllListings());
     }
     @Test
     void testFoodListingConstructor(){
@@ -47,7 +47,7 @@ public class ListingsTests {
     }
     @Test
     void testDietaryFilter(){
-        List<FoodListing> matchingListings = listings.dietaryFilter(listings.allListings, "Gluten Free");
+        List<FoodListing> matchingListings = listingsController.dietaryFilter(listingsController.allListings, "Gluten Free");
         assertEquals(matchingListings.size(), 1);
     }
 }
