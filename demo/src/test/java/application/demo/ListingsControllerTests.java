@@ -15,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ListingsControllerTests {
     ListingsController listingsController = new ListingsController();
 
-    FoodListing firstListing = new FoodListing("My Listing", "Yummy food", 3, new ArrayList<String>(
-            Arrays.asList("Gluten Free", "Vegan")), LocalDateTime.of(2015,
+    FoodListing firstListing = new FoodListing("My Listing", "Yummy food", 3,
+            ("Gluten Free, Vegan"), LocalDateTime.of(2015,
             Month.JULY, 29, 19, 30, 40), "Coles");
 
     @BeforeEach
@@ -42,8 +42,8 @@ public class ListingsControllerTests {
 
     @Test
     void testSetDietary(){
-        firstListing.setDietaryDetails(Arrays.asList("Gluten Free", "Vegetarian"));
-        assertEquals(Arrays.asList("Gluten Free", "Vegetarian"), firstListing.getDietaryDetails());
+        firstListing.setDietaryDetails("Gluten Free, Vegetarian");
+        assertEquals(("Gluten Free, Vegetarian"), firstListing.getDietaryDetails());
     }
     @Test
     void testDietaryFilter(){
