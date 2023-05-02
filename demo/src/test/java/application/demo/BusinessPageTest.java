@@ -1,9 +1,8 @@
-package example.application;
+package application.demo;
 
 import example.data.BusinessPage;
 import example.data.Exceptions.InvalidReviewException;
 import example.data.Review;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-class SaksheeTests {
+class BusinessPageTest {
 
 	private BusinessPage businessPage;
 
