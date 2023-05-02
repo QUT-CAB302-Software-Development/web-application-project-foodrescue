@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class NewPostController {
-    @GetMapping("/NewPost")
+    @GetMapping("/new-post")
     public String home() {
         return "new-post";
     }
