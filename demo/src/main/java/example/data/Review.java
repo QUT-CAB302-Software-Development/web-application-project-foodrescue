@@ -11,6 +11,7 @@ public class Review {
 
     private int rating;
 
+
     /**
      * Method 5
      * Review constructor that creates a review only when ratings are valid and the review description
@@ -28,6 +29,8 @@ public class Review {
         this.description = description;
         this.rating = rating;
     }
+
+
 
     public String getTitle() {
         return title;
