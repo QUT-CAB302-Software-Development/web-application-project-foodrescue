@@ -1,13 +1,12 @@
-package application.demo.models;
+package application.demo.controllers;
 
 import application.demo.models.FoodListing;
 
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class Listings {
+public class ListingsController {
 
     public List<FoodListing> allListings = new ArrayList<>();
 
