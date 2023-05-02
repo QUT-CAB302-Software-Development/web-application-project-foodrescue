@@ -1,6 +1,6 @@
-package application.demo.data;
+package application.food_rescue.data;
 
-import application.demo.models.User;
+import application.food_rescue.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
