@@ -2,12 +2,30 @@ package application.food_rescue.models;
 
 
 import application.food_rescue.exceptions.InvalidReviewException;
+import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class BusinessPage {
+/* BusinessPage Class
+* parameters: String name
+* attributes: int id, String name, List<Review> reviews
+*
+* Methods:
+* 1. getNumberOfReviews(): returns the size of reviews
+* 2. getAverageRating(): returns the average rating from reviews, returns 0 if it is empty
+* 3. deleteReview(Review review): removes review from reviews if it exists in reviews
+* 4. addReview(Review review): adds review to reviews if it has a valid rating and is not null
+* 5. getName(): returns name
+* 6. getReviews(): returns reviews
+* */
 
+@Entity
+public class BusinessPage {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false)
     private String name;
     private List<Review> reviews;
 

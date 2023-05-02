@@ -1,18 +1,20 @@
 package application.food_rescue.models;
 
 import application.food_rescue.exceptions.InvalidReviewException;
+import jakarta.persistence.*;
 
+@Entity
 public class Review {
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false)
     private String title;
-
+    @Column(nullable = false)
     private String description;
-
+    @Column(nullable = false)
     private int rating;
-
-
-
+    @Column(nullable = false)
     private long userId;
     public String getTitle() {
         return title;
