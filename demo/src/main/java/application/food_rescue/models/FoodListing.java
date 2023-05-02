@@ -1,11 +1,9 @@
-package application.demo.models;
+package application.food_rescue.models;
 
 import jakarta.persistence.*;
 
-import java.sql.Time;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+
 @Entity
 public class FoodListing {
     @Id
