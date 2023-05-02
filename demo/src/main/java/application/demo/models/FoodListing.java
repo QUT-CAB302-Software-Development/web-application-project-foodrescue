@@ -1,28 +1,43 @@
 package application.demo.models;
 
+import jakarta.persistence.*;
+
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class FoodListing {
-    public String title;
-    public String description;
-    public Integer quantity;
-    public List<String> dietaryDetails;
-    public LocalDateTime pickupTime;
-    public String pickupLocation;
-    public LocalDateTime expiryDate;
-    public LocalDateTime preparationTime;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false)
+    private String title;
+    @Column(nullable = false)
+    private String description;
+    @Column(nullable = false)
+    private Integer quantity;
+    @Column
+    private String dietaryRequirements;
+    @Column(nullable = false)
+    private LocalDateTime pickupTime;
+    @Column(nullable = false)
+    private String pickupLocation;
+    @Column
+    private LocalDateTime expiryDate;
+    @Column
+    private LocalDateTime preparationTime;
 
-    public FoodListing(String title, String description, Integer quantity, ArrayList<String> dietaryDetails, LocalDateTime pickupTime, String pickupLocation) {
+    public FoodListing(String title, String description, Integer quantity, String dietaryRequirements, LocalDateTime pickupTime, String pickupLocation) {
         this.title = title;
         this.description = description;
         this.quantity = quantity;
-        this.dietaryDetails = dietaryDetails;
+        this.dietaryRequirements = dietaryRequirements;
         this.pickupTime = pickupTime;
         this.pickupLocation = pickupLocation;
     }
+
+    public FoodListing() { }
 
     public void setExpiryDate(LocalDateTime expiryDate){
         this.expiryDate = expiryDate;
@@ -44,8 +59,8 @@ public class FoodListing {
         this.quantity = quantity;
     }
 
-    public void setDietaryDetails(List<String> dietaryDetails){
-        this.dietaryDetails = dietaryDetails;
+    public void setDietaryDetails(String dietaryDetails){
+        this.dietaryRequirements = dietaryDetails;
     }
 
     public void setPickupTime(LocalDateTime time){
@@ -67,8 +82,8 @@ public class FoodListing {
         return this.quantity;
     }
 
-    public List<String> getDietaryDetails(){
-        return this.dietaryDetails;
+    public String getDietaryDetails(){
+        return this.dietaryRequirements;
     }
 
     public LocalDateTime getPickupTime(){
