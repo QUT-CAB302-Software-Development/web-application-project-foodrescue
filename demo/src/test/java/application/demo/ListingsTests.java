@@ -48,6 +48,6 @@ public class ListingsTests {
     @Test
     void testDietaryFilter(){
         List<FoodListing> matchingListings = listings.dietaryFilter(listings.allListings, "Gluten Free");
-        System.out.println(matchingListings.size());
+        assertEquals(matchingListings.size(), 1);
     }
 }
