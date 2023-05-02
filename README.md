@@ -49,6 +49,16 @@ To run the application, run the `main` method in the `example.application.FoodRe
 
 This will start the application on port 8080. You can access the application by navigating to `http://localhost:8080/landing-page` in your browser.
 
+### 3. Configure mysql
+
+Create a new schema called food_rescue
+
+### 4. Configure application.properties
+
+Change the following:
+- spring.datasource.username=xxxxx
+- spring.datasource.password=xxxxxxxxxx
+
 ### Project Structure
 
 In this project, the Java code is located in the `src/main/java` directory, and the HTML templates are located in the `src/main/resources/templates` directory. 
