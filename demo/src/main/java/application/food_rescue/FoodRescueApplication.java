@@ -1,4 +1,4 @@
-package application.demo;
+package application.food_rescue;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
