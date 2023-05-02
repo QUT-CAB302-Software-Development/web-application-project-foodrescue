@@ -1,6 +1,6 @@
-package application.demo;
-import application.demo.models.FoodListing;
-import application.demo.controllers.ListingsController;
+package application.food_rescue;
+import application.food_rescue.models.FoodListing;
+import application.food_rescue.controllers.ListingsController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

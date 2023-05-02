@@ -1,6 +1,6 @@
-package example.data;
+package application.food_rescue.models;
 
-import example.data.Exceptions.InvalidReviewException;
+import application.food_rescue.exceptions.InvalidReviewException;
 
 public class Review {
 

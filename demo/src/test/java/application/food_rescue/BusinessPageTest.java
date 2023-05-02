@@ -1,8 +1,8 @@
-package application.demo;
+package application.food_rescue;
 
-import example.data.BusinessPage;
-import example.data.Exceptions.InvalidReviewException;
-import example.data.Review;
+import application.food_rescue.exceptions.InvalidReviewException;
+import application.food_rescue.models.Review;
+import application.food_rescue.models.BusinessPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

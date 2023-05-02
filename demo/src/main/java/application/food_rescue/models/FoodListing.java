@@ -1,4 +1,4 @@
-package application.demo.models;
+package application.food_rescue.models;
 
 import jakarta.persistence.*;
 
