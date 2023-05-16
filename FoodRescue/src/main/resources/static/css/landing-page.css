@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #1b95aa, #9CE3EF);
+}
+
+.overview, .our_team {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (min-height: 700px) {
+    .overview{
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+    .our_team {
+        padding-bottom: 18rem;
+    }
+}
+
+footer {
+    background-color: #F5C830;
+}
+
