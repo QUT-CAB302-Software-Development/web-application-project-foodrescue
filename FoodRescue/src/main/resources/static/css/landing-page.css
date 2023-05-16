@@ -5,7 +5,8 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #1b95aa, #9CE3EF);
+    background: linear-gradient(to bottom, #459FB1, #9CE3EF);
+    min-height: 100vh;
 }
 
 .overview, .our_team {
