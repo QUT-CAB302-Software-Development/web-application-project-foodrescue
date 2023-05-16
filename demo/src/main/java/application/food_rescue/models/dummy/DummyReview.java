@@ -28,17 +28,17 @@ public class DummyReview {
             this.review_description = review_description;
         }
 
-    public String reviewToString() {
-        return "Review{" +
+    public String toString() {
+        return "comments[{" +
                 "id=" + id +
                 ", userName=" + userName +
                 ", title" + review_title +
                 ", full_review=" + review_description +
-                "}";
+                "}]";
     }
         public static DummyReview fromJson(String json) {
-            Gson gson = new Gson();
-            return gson.fromJson(json, DummyReview.class);
+        Gson gson = new Gson();
+        return gson.fromJson(json, DummyReview.class);
         }
 
 }

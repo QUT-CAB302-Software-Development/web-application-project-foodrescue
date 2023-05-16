@@ -16,6 +16,7 @@ public class DummyReviewFetcher {
             String url = "https://dummyjson.com/comments" + id;
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
+                    .GET()
                     .build();
             try {
                 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
