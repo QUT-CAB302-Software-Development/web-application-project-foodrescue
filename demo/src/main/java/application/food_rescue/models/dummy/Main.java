@@ -5,5 +5,11 @@ public class Main {
         DummyReviewFetcher fetcher = new DummyReviewFetcher();
         DummyReview review = fetcher.fetchDummyReview(1);
         System.out.println(review);
+
+//        DummyReviewFetcher fetcher = new DummyReviewFetcher();
+//        DummyReview[] reviews = fetcher.fetchDummyReviews();
+//        for (DummyReview review : reviews) {
+//            System.out.println(reviews);
+//        }
     }
 }

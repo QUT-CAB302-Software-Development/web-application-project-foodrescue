@@ -3,42 +3,44 @@ package application.food_rescue.models.dummy;
 import com.google.gson.Gson;
 
 public class DummyReview {
-        private int id;
-        private String review_title;
-        private String review_description;
-        private String userName;
 
+    private int id;
+    private String review_title;
+    private String body;
+    private String username;
 
-        public DummyReview(String userName, String description) {
-            this.review_description = description;
-            this.userName = userName;
-            this.review_title = review_description.substring(0, 15) + "...";
-        }
-
-
-        public void setReview_title(String review_title) {
-            this.review_title = review_title;
-        }
-
-        public String getReview_description() {
-            return review_description;
-        }
-
-        public void setReview_description(String review_description) {
-            this.review_description = review_description;
-        }
-
-    public String toString() {
-        return "comments[{" +
-                "id=" + id +
-                ", userName=" + userName +
-                ", title" + review_title +
-                ", full_review=" + review_description +
-                "}]";
+    public int getId() {
+        return id;
     }
-        public static DummyReview fromJson(String json) {
+
+
+    public String getuserName() {
+        return username;
+    }
+
+    public String getReview_description() {
+        return body;
+    }
+
+    @Override
+    public String toString() {
+        return "reviews{" +
+                "id=" + id +
+                ", username=" + username +
+                ", full_review=" + body +
+                "}";
+    }
+
+    /**
+     * Converts a JSON string to a DummyUser object using GSon.
+     *
+     * @param json the JSON string to convert
+     * @return the DummyUser object
+     */
+    public static DummyReview fromJson(String json) {
         Gson gson = new Gson();
         return gson.fromJson(json, DummyReview.class);
-        }
+    }
+
 
 }
