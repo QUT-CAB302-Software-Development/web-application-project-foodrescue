@@ -10,18 +10,16 @@ import static org.junit.Assert.assertEquals;
 public class DummyReviewTests {
     DummyReviewFetcher fetcher = new DummyReviewFetcher();
     @Test
-    void testIDFetched(){
+    public void testIDFetched(){
 
         DummyReview review = fetcher.fetchDummyReview(1);
         assertEquals(1, review.getId());
     }
 
     @Test
-    void testBodyFetched(){
+    public void testBodyFetched(){
 
         DummyReview review = fetcher.fetchDummyReview(1);
-        assertEquals(1, review.getReview_description());
+        assertEquals("This is some awesome thinking!", review.getReview_description());
     }
-
-
 }
