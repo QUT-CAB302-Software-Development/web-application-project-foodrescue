@@ -47,7 +47,7 @@ If the `corretto-18` SDK is not available, you will need to download and install
 
 To run the application, run the `main` method in the `example.application.FoodRescueApplication` class, found in `FoodRescue/src/main/java/application/FoodRescueApplication.java`.
 
-This will start the application on port 8080. You can access the application by navigating to `http://localhost:8080/landing-page` in your browser.
+This will start the application on port 8080. You can access the application by navigating to `http://localhost:8080/` in your browser.
 
 ### 3. Configure mysql
 

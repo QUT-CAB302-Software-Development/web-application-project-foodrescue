@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class LandingPageController {
 
-    @GetMapping("/landing-page")
+    @GetMapping("/")
     public String showLandingPage(Model model) {
         return "landing-page";
     }
 
-    @RequestMapping("/landing-page")
+    @RequestMapping("/")
     public String showLandingPage2(Model model) {
         return "landing-page";
     }
