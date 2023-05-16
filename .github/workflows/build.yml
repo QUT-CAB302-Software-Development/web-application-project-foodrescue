@@ -21,7 +21,7 @@ jobs:
         cache: maven
         
     - name: Test with Maven
-      run: mvn -B clean test --file ./demo/pom.xml
+      run: mvn -B clean test --file ./FoodRescue/pom.xml
 
     # The test reports are generated in target/surefire-reports
     - name: Collect Test Report
@@ -29,5 +29,5 @@ jobs:
       if: always()
       with:
         name: TestReport
-        path: ./demo/target/surefire-reports
+        path: ./FoodRescue/target/surefire-reports
         retention-days: 30
