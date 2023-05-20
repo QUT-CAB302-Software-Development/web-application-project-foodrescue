@@ -11,20 +11,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class NewPostController {
     @Autowired
-    private FoodListingRepository userRepo;
+    private FoodListingRepository listingRepo;
     @GetMapping("/new-post")
-    public String nwePostForm(Model model) {
+    public String newPostForm(Model model) {
         model.addAttribute("listing", new FoodListing());
         return "new-post";
     }
+    @PostMapping("/create_listing")
+    public String createListing(FoodListing listing, Model model) {
+        listingRepo.save(listing);
 
-    @PostMapping("/listing-page")
-    public String processRegister(FoodListing listing) {
-        userRepo.save(listing);
-
-        return "register_success";
+        return "listing_success";
     }
+
 }

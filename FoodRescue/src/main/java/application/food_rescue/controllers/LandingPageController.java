@@ -12,8 +12,4 @@ public class LandingPageController {
         return "landing-page";
     }
 
-    @RequestMapping("/")
-    public String showLandingPage2(Model model) {
-        return "landing-page";
-    }
 }

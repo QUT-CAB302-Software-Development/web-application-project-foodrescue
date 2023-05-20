@@ -2,6 +2,7 @@ package application.food_rescue.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,32 +18,30 @@ public class FoodListing {
     private Integer quantity;
     @Column
     private String dietaryRequirements;
-    @Column(nullable = false)
-    private LocalDateTime pickupTime;
-    @Column(nullable = false)
+    @Column
     private String pickupLocation;
     @Column
-    private LocalDateTime expiryDate;
-    @Column
-    private LocalDateTime preparationTime;
+    private LocalDate pickupDate;
 
-    public FoodListing(String title, String description, Integer quantity, String dietaryRequirements, LocalDateTime pickupTime, String pickupLocation) {
+
+    public FoodListing(String title, String description, Integer quantity, String dietaryRequirements,
+                      String pickupLocation, LocalDate pickupDate) {
         this.title = title;
         this.description = description;
         this.quantity = quantity;
         this.dietaryRequirements = dietaryRequirements;
-        this.pickupTime = pickupTime;
         this.pickupLocation = pickupLocation;
+        this.pickupDate = pickupDate;
     }
 
     public FoodListing() { }
 
-    public void setExpiryDate(LocalDateTime expiryDate){
-        this.expiryDate = expiryDate;
+    public LocalDate getPickupDate() {
+        return pickupDate;
     }
 
-    public void setPreparationTime(LocalDateTime preparationTime){
-        this.preparationTime = preparationTime;
+    public void setPickupDate(LocalDate pickupDate) {
+        this.pickupDate = pickupDate;
     }
 
     public void setTitle(String title){
@@ -57,13 +56,11 @@ public class FoodListing {
         this.quantity = quantity;
     }
 
-    public void setDietaryDetails(String dietaryDetails){
-        this.dietaryRequirements = dietaryDetails;
+    public void setDietaryRequirements(String dietaryRequirements){
+        this.dietaryRequirements = dietaryRequirements;
     }
 
-    public void setPickupTime(LocalDateTime time){
-        this.pickupTime = time;
-    }
+
 
     public void setPickupLocation(String location){
         this.pickupLocation = location;
@@ -80,23 +77,13 @@ public class FoodListing {
         return this.quantity;
     }
 
-    public String getDietaryDetails(){
+    public String getDietaryRequirements(){
         return this.dietaryRequirements;
     }
 
-    public LocalDateTime getPickupTime(){
-        return this.pickupTime;
-    }
 
     public String getPickupLocation(){
         return this.pickupLocation;
     }
 
-    public LocalDateTime getExpiryDate(){
-        return this.expiryDate;
-    }
-
-    public LocalDateTime getPreparationTime(){
-        return this.preparationTime;
-    }
 }

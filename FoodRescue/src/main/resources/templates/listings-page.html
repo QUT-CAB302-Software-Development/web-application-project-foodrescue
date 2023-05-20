@@ -27,51 +27,18 @@
 
 <main class="listings">
     <h1>Various Listings</h1>
-    <div class="card">
+    <div class="card" th:each="listing : ${listings}">
         <div>
             <img src="/static/images/placeholder.jpg" alt="placeholder image">
         </div>
         <div class="text">
-            <h2>Vanilla Custard Pastries</h2>
+            <h2 th:text="${listing.getTitle()}"/>
             <div class="info">
-                <p>Quantity: 2</p>
-                <p>Use by: 19/4/23</p>
+                <p>Quantity: <span th:text="${listing.getQuantity()}"/></p>
+                <p>Dietary Requirements: <span th:text="${listing.getDietaryRequirements()}"/></p>
+                <p>Pickup Date: <span th:text="${listing.getPickupDate()}"/></p>
             </div>
-            <h3><span class="material-symbols-outlined">location_on</span>The Best Bakery</h3>
-        </div>
-        <div class="CTA flex-col">
-            <a href="#" class="primary-button">View Details</a>
-            <a href="#" class="primary-button">Reserve</a>
-        </div>
-    </div>
-    <div class="card">
-        <div>
-            <img src="/static/images/placeholder.jpg" alt="placeholder image">
-        </div>
-        <div class="text">
-            <h2>Various Vegetables</h2>
-            <div class="info">
-                <p>Quantity: 50</p>
-                <p>Use by: 25/4/23</p>
-            </div>
-            <h3><span class="material-symbols-outlined">location_on</span>COLES Brisbane City</h3>
-        </div>
-        <div class="CTA flex-col">
-            <a href="#" class="primary-button">View Details</a>
-            <a href="#" class="primary-button">Reserve</a>
-        </div>
-    </div>
-    <div class="card">
-        <div>
-            <img src="/static/images/placeholder.jpg" alt="placeholder image">
-        </div>
-        <div class="text">
-            <h2>Canned Beans</h2>
-            <div class="info">
-                <p>Quantity: 3</p>
-                <p>Use by: 25/4/35</p>
-            </div>
-            <h3><span class="material-symbols-outlined">location_on</span>The Bean Store</h3>
+            <h3 th:text="${listing.getPickupLocation()}"><span class="material-symbols-outlined">location_on</span></h3>
         </div>
         <div class="CTA flex-col">
             <a href="#" class="primary-button">View Details</a>

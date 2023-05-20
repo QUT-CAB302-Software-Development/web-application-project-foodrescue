@@ -18,27 +18,27 @@ public class ListingsController {
         allListings.remove(listing);
     }
 
-    public List<FoodListing> dietaryFilter(List<FoodListing> allListings, String dietaryRequirement){
-        List<FoodListing> filteredListings = new ArrayList<>();
-        for(FoodListing listing: allListings){
-            if(listing.getDietaryDetails().contains(dietaryRequirement)){
-                filteredListings.add(listing);
-            }
+//    public List<FoodListing> dietaryFilter(List<FoodListing> allListings, String dietaryRequirement){
+//        List<FoodListing> filteredListings = new ArrayList<>();
+//        for(FoodListing listing: allListings){
+//            if(listing.getDietaryDetails().contains(dietaryRequirement)){
+//                filteredListings.add(listing);
+//            }
+//
+//        }
+//        return filteredListings;
+//    }
 
-        }
-        return filteredListings;
-    }
-
-    public List<FoodListing> pickupTimeFilter(List<FoodListing> allListings, Time time){
-        List<FoodListing> filteredListings = new ArrayList<>();
-        for(FoodListing listing: allListings){
-            if(listing.getPickupTime().equals(time)){
-                filteredListings.add(listing);
-            }
-
-        }
-        return filteredListings;
-    }
+//    public List<FoodListing> pickupTimeFilter(List<FoodListing> allListings, Time time){
+//        List<FoodListing> filteredListings = new ArrayList<>();
+//        for(FoodListing listing: allListings){
+//            if(listing.getPickupTime().equals(time)){
+//                filteredListings.add(listing);
+//            }
+//
+//        }
+//        return filteredListings;
+//    }
 
     public List<FoodListing> quantityFilter(List<FoodListing> allListings, Integer quantity){
         List<FoodListing> filteredListings = new ArrayList<>();
