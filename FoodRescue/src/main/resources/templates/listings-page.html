@@ -27,6 +27,7 @@
 
 <main class="listings">
     <h1>Various Listings</h1>
+    <button onclick="window.location.href = '/new-post'" class="btn inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add Post</button>
     <div class="card" th:each="listing : ${listings}">
         <div>
             <img src="/static/images/placeholder.jpg" alt="placeholder image">
@@ -47,7 +48,7 @@
     </div>
 </main>
 
-<footer>
+<footer class="absolute bottom-0">
     <div class="footer-left">
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
