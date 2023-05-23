@@ -2,75 +2,78 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <meta charset="UTF-8">
     <title>Create a New Post!</title>
+
+    <th:block th:insert="~{head}"></th:block>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/new-post.css">
 </head>
-<body>
-<div class="container-lg" style="margin-right: 100px; margin-left: 100px; margin-top: 50px;">
-    <h1> Create a New Post!</h1>
 
-    <form method="post" th:action="@{/create_listing}" th:object="${listing}">
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" name="title"
-                       th:field="*{title}"
-                       class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                       required
-                />
-            </div>
+<body class="font-sans">
+    <div class="container mx-auto p-8 flex flex-col">
+        <h1 class="text-6xl text-center mb-12 font-bold text-white">Create a New Post!</h1>
+        <div class="max-w-md w-full mx-auto">
+            <div class="min-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-2xl">
+                <div class="p-8">
+                    <form method="post" th:action="@{/create_listing}" th:object="${listing}">
+                        <div class="mb-5">
+                            <label for="title" class="block mb-2 text-sm font-medium text-gray-600">Title</label>
+                            <input type="text" id="title" name="title" th:field="*{title}"
+                                class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                required />
+                        </div>
 
-            <div class="col-12">
-                <label for="description" class="form-label">Description</label>
-                <input type="text" id="description" name="description"
-                       th:field="*{description}"
-                       class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                       required
-                />
-            </div>
+                        <div class="mb-5">
+                            <label for="description"
+                                class="block mb-2 text-sm font-medium text-gray-600">Description</label>
+                            <input type="text" id="description" name="description" th:field="*{description}"
+                                class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                required />
+                        </div>
 
-            <div class="col-md-6">
-                <label for="quantity" class="form-label">Quantity</label>
-                <input type="number" id="quantity" name="quantity"
-                       th:field="*{quantity}"
-                       class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                       required
-                />
-            </div>
-            <div class="col-md-4">
-                <label for="dietaryRequirements" class="form-label">Dietary Information</label>
-                <input type="text" id="dietaryRequirements" name="dietaryInfo"
-                       th:field="*{dietaryRequirements}"
-                       class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                       required
-                />
-            </div>
-            <div class="col-md-4">
-                <label for="pickupDate" class="form-label">Pick Up Date</label>
-                <div class="col-md-2">
-                    <input type="date" id="pickupDate" name="pickupDate"
-                           th:field="*{pickupDate}"
-                           class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                           required
-                    />
+                        <div class="mb-5">
+                            <label for="quantity" class="block mb-2 text-sm font-medium text-gray-600">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" th:field="*{quantity}"
+                                class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                required />
+                        </div>
+                        <div class="mb-5">
+                            <label for="dietaryRequirements"
+                                class="block mb-2 text-sm font-medium text-gray-600">Dietary
+                                Information</label>
+                            <input type="text" id="dietaryRequirements" name="dietaryInfo"
+                                th:field="*{dietaryRequirements}"
+                                class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                required />
+                            <div class="mb-5">
+                                <label for="imageUrl" class="block mb-2 text-sm font-medium text-gray-600">Image
+                                    Url</label>
+                                <input type="text" id="imageUrl" name="imageUrl" th:field="*{imageUrl}"
+                                    class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                    required />
+                            </div>
+                            <div class="mb-5">
+                                <label for="pickupDate" class="block mb-2 text-sm font-medium text-gray-600">Pick Up
+                                    Date</label>
+                                <input type="date" id="pickupDate" name="pickupDate" th:field="*{pickupDate}"
+                                    class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                    required />
+                            </div>
+                            <div class="mb-5">
+                                <label for="address"
+                                    class="block mb-2 text-sm font-medium text-gray-600">Address</label>
+                                <input type="text" id="address" name="address" th:field="*{pickupLocation}"
+                                    class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
+                                    required />
+                            </div>
 
+                            <button type="submit" name="Post" value="Post"
+                                class="w-full p-3 mt-4 bg-indigo-600 text-white rounded shadow">Post</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-8">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" id="address" name="address"
-                           th:field="*{pickupLocation}"
-                           class="form-control block w-full p-3 rounded bg-gray-300 border border-transparent focus:outline-none"
-                           required
-                    />
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Post</button>
-                </div>
             </div>
-        </form>
-
-    </form>
-</div>
+        </div>
+    </div>
 </body>
-</html>

@@ -8,3 +8,7 @@ body {
     background: linear-gradient(to bottom, #459FB1, #9CE3EF);
     min-height: 100vh;
 }
+
+.btn:active {
+    transform: translateY(2px);
+}

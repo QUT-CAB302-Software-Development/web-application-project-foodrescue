@@ -22,6 +22,4 @@ public class ListingPageController {
         model.addAttribute("listings", allListings );
         return "listings-page";
     }
-
-
 }

@@ -9,18 +9,6 @@ body {
     min-height: 100vh;
 }
 
-.login-btn {
-    background-color: yellow;
-}
-.login-btn:hover {
-    background-color: #ffcc00;
-}
-.login-btn:active, .btn:active {
+.btn:active {
     transform: translateY(2px);
-}
-
-
-
-footer {
-    background-color: #F5C830;
 }

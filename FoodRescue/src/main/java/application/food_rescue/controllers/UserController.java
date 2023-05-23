@@ -34,7 +34,7 @@ public class UserController {
 
         userRepo.save(user);
 
-        return "redirect:/login_form";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
@@ -66,7 +66,6 @@ public class UserController {
             model.addAttribute("errorMessage", errorMessage);
             return "error";
         }
-
 
     }
 }
