@@ -19,21 +19,6 @@ body {
     transform: translateY(2px);
 }
 
-.overview, .our_team {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-}
-
-@media (min-height: 700px) {
-    .overview{
-        padding-top: 12rem;
-        padding-bottom: 12rem;
-    }
-    .our_team {
-        padding-bottom: 18rem;
-    }
-}
-
 footer {
     background-color: #F5C830;
 }
