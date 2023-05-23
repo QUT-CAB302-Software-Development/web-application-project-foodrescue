@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(to bottom, #459FB1, #9CE3EF);
+    color: #fff;
+    height: 100vh;
+}
+h3 {
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+.container.text-center {
+    padding: 30% 0;
+}
