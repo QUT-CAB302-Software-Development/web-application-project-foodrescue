@@ -15,18 +15,15 @@ public class UserController {
     @Autowired
     private UserRepository userRepo;
 
+    @GetMapping("/")
+    public String showLandingPage(Model model) {
+        return "landing-page";
+    }
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-
         return "signup_form";
-    }
-
-    @GetMapping("/login")
-    public String showLoginForm(Model model) {
-        model.addAttribute("user", new User());
-
-        return "login_form";
     }
 
     @PostMapping("/process_register")
@@ -39,6 +36,13 @@ public class UserController {
 
         return "register_success";
     }
+
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        model.addAttribute("user", new User());
+        return "login_form";
+    }
+
 
     @PostMapping("/process_login")
     public String authenticateUser(Model model, User user) {
