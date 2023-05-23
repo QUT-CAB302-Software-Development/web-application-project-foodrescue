@@ -34,7 +34,7 @@ public class UserController {
 
         userRepo.save(user);
 
-        return "register_success";
+        return "redirect:/login_form";
     }
 
     @GetMapping("/login")
@@ -53,7 +53,7 @@ public class UserController {
         if(foundUser != null){
             if(passwordEncoder.matches(inputPass, foundUser.getPassword())) {
                 System.out.println("Login Successful!");
-                return "login_success";
+                return "redirect:/listings-page";
             }
             else {
                 String errorMessage = "Incorrect email or password";

@@ -19,6 +19,8 @@ public class FoodListing {
     @Column
     private String dietaryRequirements;
     @Column
+    private String imageUrl;
+    @Column
     private String pickupLocation;
     @Column
     private LocalDate pickupDate;
@@ -60,8 +62,6 @@ public class FoodListing {
         this.dietaryRequirements = dietaryRequirements;
     }
 
-
-
     public void setPickupLocation(String location){
         this.pickupLocation = location;
     }
@@ -71,6 +71,14 @@ public class FoodListing {
     }
     public String getDescription(){
         return this.description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Integer getQuantity(){

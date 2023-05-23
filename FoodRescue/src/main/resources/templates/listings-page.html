@@ -21,7 +21,7 @@
     <div class="nav-links">
         <div>about</div>
         <div>contact</div>
-        <a class="nav-links-login" href="/login">login</a>
+        <a class="nav-links-login" href="/">Logout</a>
     </div>
 </navbar>
 
@@ -30,7 +30,7 @@
     <button onclick="window.location.href = '/new-post'" class="btn inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add Post</button>
     <div class="card" th:each="listing : ${listings}">
         <div>
-            <img src="/static/images/placeholder.jpg" alt="placeholder image">
+            <img th:src="${listing.getImageUrl()}" alt="food image" class="foodImage">
         </div>
         <div class="text">
             <h2 th:text="${listing.getTitle()}"/>

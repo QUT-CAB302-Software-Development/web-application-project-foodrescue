@@ -26,7 +26,7 @@ public class NewPostController {
     public String createListing(FoodListing listing, Model model) {
         listingRepo.save(listing);
 
-        return "listing_success";
+        return "redirect:/listings-page";
     }
 
 }
